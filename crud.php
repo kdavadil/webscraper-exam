@@ -67,6 +67,20 @@ class DataOperation extends Database {
 		}
 	}
 
+	public function delete_record($table,$where) {
+		$sql = "";
+		$condition = "";
+
+		foreach ($where as $key => $value) {
+			$condition .= $key . "='" . $value . "' AND ";
+		}
+		$condition = substr($condition, 0, -5);
+		$sql = "DELETE FROM ".$table." WHERE ".$condition;
+		if (mysqli_query($this->con,$sql)) {
+			return true;
+		}
+	}
+
 }
 
  $obj = new DataOperation;  
@@ -97,5 +111,14 @@ if (isset($_POST["edit"])) {
 	 	header("location:index.php?msg=Record Updated");
 	 }
 }
+
+	if (isset($_GET["delete"])) {
+		$id = $_GET["id"] ?? null;
+		$where = array("id" => $id);
+		if($obj->delete_record("person",$where)){
+			header("location:index.php?msg=Record Deleted");
+		}
+		
+	}
 
  ?>

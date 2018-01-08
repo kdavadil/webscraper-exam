@@ -134,7 +134,7 @@ else {
         <td><?php echo $row["firstname"]; ?></td>
         <td><?php echo $row["gender"]; ?></td>
         <td><a href="index.php?update=1&id=<?php echo $row["id"]; ?>" class="btn btn-info">Edit</a></td>
-        <td><a href="#" class="btn btn-danger">Delete</a></td>
+        <td><a href="crud.php?delete=1&id=<?php echo $row["id"]; ?>" class="btn btn-danger">Delete</a></td>
       </tr>
 
       <?php 
