@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="nav navbar-nav pull-right">
         <li class="active"><a href="index.php">Home</a></li>
-       <!--  <li><a href="#" id="myBtnRegister">Register</a></li>  -->
+        <li><a href="output.php" id="myBtnOutput">Database</a></li> 
       </ul>
     </div>
   </div>
